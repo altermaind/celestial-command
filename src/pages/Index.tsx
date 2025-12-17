@@ -5,16 +5,25 @@ import { PillarsSection } from "@/components/PillarsSection";
 import { ProductsSection } from "@/components/ProductsSection";
 import { ServicesSection } from "@/components/ServicesSection";
 import { Footer } from "@/components/Footer";
+import { StarField } from "@/components/StarField";
+import { CursorGlow } from "@/components/CursorGlow";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {/* Global effects */}
+      <StarField />
+      <CursorGlow />
+      
+      {/* Content */}
       <Navigation />
-      <HeroSection />
-      <WhoWeAreSection />
-      <PillarsSection />
-      <ProductsSection />
-      <ServicesSection />
+      <main>
+        <HeroSection />
+        <WhoWeAreSection />
+        <PillarsSection />
+        <ProductsSection />
+        <ServicesSection />
+      </main>
       <Footer />
     </div>
   );

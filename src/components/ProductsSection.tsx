@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { 
   Shield, Sparkles, Cloud, Gauge, FileText,
-  ChevronRight, CheckCircle2
+  ChevronRight, Check, ArrowRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const products = [
   {
@@ -11,7 +12,7 @@ const products = [
     name: "Gravity",
     tagline: "AI Governance Platform",
     icon: Shield,
-    color: "cyan",
+    gradient: "from-primary via-glow-blue to-primary",
     description: "Il mission control per la governance AI enterprise. Controllo completo su modelli, agenti, costi e compliance.",
     features: [
       "AI Act compliance automatizzata",
@@ -21,9 +22,9 @@ const products = [
       "Risk scoring real-time",
     ],
     metrics: [
-      { label: "Compliance Score", value: "98.5%" },
-      { label: "Cost Saved", value: "40%" },
-      { label: "Audit Time", value: "-80%" },
+      { label: "Compliance", value: "98.5%", trend: "+2.1%" },
+      { label: "Cost Saved", value: "40%", trend: "+5%" },
+      { label: "Audit Time", value: "-80%", trend: "↓" },
     ],
   },
   {
@@ -31,7 +32,7 @@ const products = [
     name: "Aurora",
     tagline: "Agentic Platform",
     icon: Sparkles,
-    color: "gold",
+    gradient: "from-accent via-glow-gold to-accent",
     description: "Orchestrazione di agenti AI autonomi con guardrail enterprise. Workflow complessi, decisioni distribuite, controllo totale.",
     features: [
       "Agent orchestration",
@@ -41,9 +42,9 @@ const products = [
       "Multi-model support",
     ],
     metrics: [
-      { label: "Active Agents", value: "1.2K" },
-      { label: "Tasks/Day", value: "50K+" },
-      { label: "Success Rate", value: "99.2%" },
+      { label: "Agents", value: "1.2K", trend: "+120" },
+      { label: "Tasks/Day", value: "50K+", trend: "+8K" },
+      { label: "Success", value: "99.2%", trend: "+0.3%" },
     ],
   },
   {
@@ -51,7 +52,7 @@ const products = [
     name: "Nebula",
     tagline: "Cloud & DORA",
     icon: Cloud,
-    color: "blue",
+    gradient: "from-glow-blue via-primary to-glow-blue",
     description: "Infrastruttura cloud AI-native con compliance DORA integrata. Resilienza, osservabilità, scale enterprise.",
     features: [
       "Multi-cloud orchestration",
@@ -61,9 +62,9 @@ const products = [
       "Disaster recovery",
     ],
     metrics: [
-      { label: "Uptime", value: "99.99%" },
-      { label: "Regions", value: "12" },
-      { label: "Recovery", value: "<1min" },
+      { label: "Uptime", value: "99.99%", trend: "→" },
+      { label: "Regions", value: "12", trend: "+3" },
+      { label: "Recovery", value: "<1min", trend: "↓" },
     ],
   },
   {
@@ -71,7 +72,7 @@ const products = [
     name: "Slash",
     tagline: "AI Readiness",
     icon: Gauge,
-    color: "purple",
+    gradient: "from-glow-purple via-primary to-glow-purple",
     description: "Assessment e roadmap per la maturità AI della tua organizzazione. Gap analysis, prioritizzazione, transformation planning.",
     features: [
       "Maturity assessment",
@@ -81,9 +82,9 @@ const products = [
       "Transformation planning",
     ],
     metrics: [
-      { label: "Dimensions", value: "42" },
-      { label: "Benchmarks", value: "500+" },
-      { label: "Industries", value: "15" },
+      { label: "Dimensions", value: "42", trend: "→" },
+      { label: "Benchmarks", value: "500+", trend: "+50" },
+      { label: "Industries", value: "15", trend: "+2" },
     ],
   },
   {
@@ -91,7 +92,7 @@ const products = [
     name: "Beyond",
     tagline: "Document Intelligence",
     icon: FileText,
-    color: "green",
+    gradient: "from-accent via-glow-gold to-accent",
     description: "Intelligenza documentale enterprise con reasoning avanzato. Da documenti a decisioni, con audit completo.",
     features: [
       "Document understanding",
@@ -101,9 +102,9 @@ const products = [
       "Multi-format support",
     ],
     metrics: [
-      { label: "Accuracy", value: "97.8%" },
-      { label: "Formats", value: "50+" },
-      { label: "Processing", value: "10K/h" },
+      { label: "Accuracy", value: "97.8%", trend: "+1.2%" },
+      { label: "Formats", value: "50+", trend: "+8" },
+      { label: "Speed", value: "10K/h", trend: "+2K" },
     ],
   },
 ];
@@ -113,134 +114,188 @@ export const ProductsSection = () => {
 
   return (
     <section id="products" className="py-32 relative overflow-hidden">
-      {/* Background elements */}
+      {/* Background */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-primary/3 rounded-full blur-[150px]" />
       
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 relative z-10">
         {/* Section header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full glass text-xs font-medium text-primary mb-6">
+        <ScrollReveal className="max-w-3xl mx-auto text-center mb-16">
+          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-card text-sm font-medium text-primary mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
             Prodotti
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
             Le Piattaforme di
             <span className="text-gradient-cyan block mt-2">Controllo AI</span>
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
             Ogni prodotto è un modulo di controllo dedicato. Insieme formano 
-            l'ecosistema operativo per l'AI enterprise.
+            l'<span className="text-foreground">ecosistema operativo</span> per l'AI enterprise.
           </p>
-        </div>
+        </ScrollReveal>
 
-        {/* Product showcase */}
-        <div className="grid lg:grid-cols-5 gap-4 mb-12">
-          {products.map((product) => (
-            <button
-              key={product.id}
-              onClick={() => setActiveProduct(product)}
-              className={`p-4 rounded-xl text-left transition-all duration-300 ${
-                activeProduct.id === product.id
-                  ? 'glass glow-subtle ring-1 ring-primary/30'
-                  : 'bg-secondary/30 hover:bg-secondary/50'
-              }`}
-            >
-              <product.icon className={`w-6 h-6 mb-3 ${
-                activeProduct.id === product.id ? 'text-primary' : 'text-muted-foreground'
-              }`} />
-              <h3 className="font-semibold text-foreground">{product.name}</h3>
-              <p className="text-xs text-muted-foreground mt-1">{product.tagline}</p>
-            </button>
-          ))}
-        </div>
+        {/* Product tabs */}
+        <ScrollReveal>
+          <div className="flex flex-wrap justify-center gap-3 mb-16">
+            {products.map((product) => (
+              <button
+                key={product.id}
+                onClick={() => setActiveProduct(product)}
+                className={`group relative px-6 py-4 rounded-2xl transition-all duration-500 ${
+                  activeProduct.id === product.id
+                    ? 'glass-card shadow-[0_0_30px_hsl(var(--primary)/0.15)]'
+                    : 'bg-secondary/30 hover:bg-secondary/50'
+                }`}
+              >
+                {/* Active indicator */}
+                {activeProduct.id === product.id && (
+                  <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${product.gradient} opacity-10`} />
+                )}
+                
+                <div className="relative flex items-center gap-3">
+                  <product.icon className={`w-5 h-5 transition-colors ${
+                    activeProduct.id === product.id ? 'text-primary' : 'text-muted-foreground'
+                  }`} />
+                  <div className="text-left">
+                    <div className={`font-semibold transition-colors ${
+                      activeProduct.id === product.id ? 'text-foreground' : 'text-muted-foreground'
+                    }`}>
+                      {product.name}
+                    </div>
+                    <div className="text-xs text-muted-foreground hidden sm:block">
+                      {product.tagline}
+                    </div>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+        </ScrollReveal>
 
         {/* Active product detail */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center" key={activeProduct.id}>
           {/* Left: Product info */}
-          <div className="space-y-8 animate-fade-in" key={activeProduct.id}>
+          <ScrollReveal className="space-y-8">
             <div>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
-                  <activeProduct.icon className="w-8 h-8 text-primary" />
+              <div className="flex items-center gap-5 mb-6">
+                <div className={`w-20 h-20 rounded-3xl bg-gradient-to-br ${activeProduct.gradient} p-[1px]`}>
+                  <div className="w-full h-full rounded-3xl bg-card flex items-center justify-center">
+                    <activeProduct.icon className="w-10 h-10 text-primary" />
+                  </div>
                 </div>
                 <div>
-                  <h3 className="text-3xl font-bold text-foreground">{activeProduct.name}</h3>
-                  <p className="text-primary">{activeProduct.tagline}</p>
+                  <h3 className="text-4xl font-bold text-foreground">{activeProduct.name}</h3>
+                  <p className="text-lg text-primary">{activeProduct.tagline}</p>
                 </div>
               </div>
-              <p className="text-muted-foreground leading-relaxed text-lg">
+              <p className="text-xl text-muted-foreground leading-relaxed">
                 {activeProduct.description}
               </p>
             </div>
 
             {/* Features */}
-            <div className="space-y-3">
-              {activeProduct.features.map((feature) => (
-                <div key={feature} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-foreground">{feature}</span>
+            <div className="space-y-4">
+              {activeProduct.features.map((feature, index) => (
+                <div 
+                  key={feature} 
+                  className="flex items-center gap-4 p-4 rounded-xl bg-secondary/30 hover:bg-secondary/50 transition-colors group animate-fade-in"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <Check className="w-4 h-4 text-primary" />
+                  </div>
+                  <span className="text-foreground font-medium">{feature}</span>
                 </div>
               ))}
             </div>
 
-            <Button variant="glow" className="group">
-              Scopri {activeProduct.name}
-              <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <Button variant="glow" size="lg" className="group btn-premium">
+              <span className="relative z-10 flex items-center gap-2">
+                Scopri {activeProduct.name}
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </span>
             </Button>
-          </div>
+          </ScrollReveal>
 
-          {/* Right: Metrics dashboard mockup */}
-          <div className="relative animate-slide-in-right" key={`${activeProduct.id}-dashboard`}>
-            <div className="glass rounded-2xl p-8 glow-subtle">
-              {/* Dashboard header */}
-              <div className="flex items-center justify-between mb-8">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full bg-primary animate-pulse" />
-                  <span className="text-sm font-medium text-foreground">{activeProduct.name} Dashboard</span>
-                </div>
-                <span className="text-xs text-muted-foreground">Live</span>
-              </div>
-
-              {/* Metrics grid */}
-              <div className="grid grid-cols-3 gap-6">
-                {activeProduct.metrics.map((metric) => (
-                  <div key={metric.label} className="text-center">
-                    <div className="text-3xl font-bold text-foreground mb-1">
-                      {metric.value}
+          {/* Right: Dashboard mockup */}
+          <ScrollReveal delay={200}>
+            <div className="relative">
+              {/* Main dashboard */}
+              <div className="glass-card rounded-3xl p-8 glow-border">
+                {/* Header */}
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center gap-3">
+                    <div className="relative">
+                      <div className="w-3 h-3 rounded-full bg-primary" />
+                      <div className="absolute inset-0 w-3 h-3 rounded-full bg-primary animate-ping" />
                     </div>
-                    <div className="text-xs text-muted-foreground">
-                      {metric.label}
-                    </div>
+                    <span className="font-semibold text-foreground">{activeProduct.name} Dashboard</span>
                   </div>
-                ))}
-              </div>
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                    <span className="text-xs font-medium text-primary">Live</span>
+                  </div>
+                </div>
 
-              {/* Visual element */}
-              <div className="mt-8 h-32 rounded-xl bg-gradient-to-br from-primary/10 to-transparent flex items-center justify-center">
-                <div className="w-full h-full relative overflow-hidden">
-                  {/* Simulated chart lines */}
+                {/* Metrics */}
+                <div className="grid grid-cols-3 gap-6 mb-8">
+                  {activeProduct.metrics.map((metric, index) => (
+                    <div 
+                      key={metric.label} 
+                      className="text-center p-4 rounded-2xl bg-secondary/30 animate-fade-in"
+                      style={{ animationDelay: `${index * 100}ms` }}
+                    >
+                      <div className="text-3xl md:text-4xl font-bold text-foreground mb-1">
+                        {metric.value}
+                      </div>
+                      <div className="text-xs text-muted-foreground mb-2">{metric.label}</div>
+                      <div className="text-xs font-medium text-primary">{metric.trend}</div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Chart visualization */}
+                <div className="h-40 rounded-2xl bg-gradient-to-br from-secondary/50 to-secondary/20 relative overflow-hidden">
+                  {/* Animated chart lines */}
                   <svg className="w-full h-full" viewBox="0 0 400 100" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.3" />
+                        <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
+                      </linearGradient>
+                    </defs>
                     <path
-                      d="M0,80 Q100,20 200,60 T400,30"
+                      d="M0,80 Q50,60 100,70 T200,50 T300,65 T400,35"
                       fill="none"
                       stroke="hsl(var(--primary))"
                       strokeWidth="2"
-                      opacity="0.5"
+                      className="animate-fade-in"
                     />
                     <path
-                      d="M0,60 Q100,80 200,40 T400,50"
-                      fill="none"
-                      stroke="hsl(var(--glow-gold))"
-                      strokeWidth="2"
-                      opacity="0.3"
+                      d="M0,80 Q50,60 100,70 T200,50 T300,65 T400,35 L400,100 L0,100 Z"
+                      fill="url(#chartGradient)"
+                      className="animate-fade-in"
                     />
                   </svg>
+                  
+                  {/* Grid overlay */}
+                  <div 
+                    className="absolute inset-0 opacity-10"
+                    style={{
+                      backgroundImage: `linear-gradient(hsl(var(--primary)) 1px, transparent 1px),
+                                       linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)`,
+                      backgroundSize: '40px 20px'
+                    }}
+                  />
                 </div>
               </div>
-            </div>
 
-            {/* Floating accent */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl" />
-          </div>
+              {/* Floating accent elements */}
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-accent/10 rounded-full blur-2xl" />
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
