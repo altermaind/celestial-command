@@ -1,5 +1,6 @@
 import { ArrowRight, Shield, Brain, Cloud, Users, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import orbitCenterIcon from "@/assets/orbit_center_icon.png";
 
 const orbitItems = [
   { icon: Shield, label: "Governance", color: "cyan" },
@@ -109,8 +110,8 @@ export const HeroSection = () => {
               <div className="absolute w-40 h-40 bg-gradient-to-br from-primary/25 to-accent/15 animate-morph" />
               {/* Glass container */}
               <div className="relative w-28 h-28 rounded-full glass-card flex items-center justify-center glow-subtle">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center">
-                  <Brain className="w-10 h-10 text-primary" />
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center p-3">
+                  <img src={orbitCenterIcon} alt="Altermaind" className="w-full h-full object-contain" />
                 </div>
               </div>
               {/* Pulse rings */}
