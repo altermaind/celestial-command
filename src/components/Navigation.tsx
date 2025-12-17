@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
+import logoAltermaind from "@/assets/logo_altermaind.svg";
 const navLinks = [
   { label: "Chi Siamo", href: "#who-we-are" },
   { label: "Pilastri", href: "#pillars" },
@@ -44,21 +44,12 @@ export const Navigation = () => {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3 group relative">
-          <div className="relative">
-            <div className="absolute inset-0 bg-primary/30 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative w-11 h-11 rounded-xl bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center border border-primary/20 group-hover:border-primary/40 transition-all duration-500">
-              <span className="text-primary font-bold text-xl">A</span>
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xl font-semibold text-foreground tracking-tight leading-none">
-              ALTER<span className="text-gradient-cyan">MAIND</span>
-            </span>
-            <span className="text-[10px] text-muted-foreground tracking-[0.2em] uppercase">
-              Shaping the Unseen
-            </span>
-          </div>
+        <a href="#" className="flex items-center group relative">
+          <img 
+            src={logoAltermaind} 
+            alt="ALTERMAIND - Shaping the Unseen" 
+            className="h-10 w-auto transition-opacity group-hover:opacity-80"
+          />
         </a>
 
         {/* Desktop Navigation */}
