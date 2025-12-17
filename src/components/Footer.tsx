@@ -70,14 +70,9 @@ export const Footer = () => {
         <div className="grid lg:grid-cols-6 gap-12 mb-16">
           {/* Brand column */}
           <div className="lg:col-span-2 space-y-6">
-            <a href="#" className="flex items-center gap-3 group">
+            <a href="#" className="flex flex-col gap-2 group">
               <img src={logoAltermaind} alt="Altermaind" className="w-16 h-16 object-contain" />
-              <div>
-                <span className="text-xl font-semibold text-foreground tracking-tight block">
-                  ALTER<span className="text-gradient-cyan">MAIND</span>
-                </span>
-                <span className="text-xs text-muted-foreground">Shaping the Unseen</span>
-              </div>
+              <span className="text-xs text-muted-foreground">Shaping the Unseen</span>
             </a>
             <p className="text-muted-foreground leading-relaxed max-w-xs">
               L'ecosistema AI enterprise governato per trasformare 
