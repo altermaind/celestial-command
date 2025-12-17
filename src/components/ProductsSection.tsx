@@ -181,8 +181,8 @@ export const ProductsSection = () => {
             <div>
               <div className="flex items-center gap-5 mb-6">
                 <div className={`w-20 h-20 rounded-3xl bg-gradient-to-br ${activeProduct.gradient} p-[1px]`}>
-                  <div className="w-full h-full rounded-3xl bg-card flex items-center justify-center">
-                    <img src={productIcon} alt={activeProduct.name} className="w-10 h-10" />
+                  <div className="w-full h-full rounded-3xl bg-card flex items-center justify-center p-3">
+                    <img src={productIcon} alt={activeProduct.name} className="w-full h-full object-contain" />
                   </div>
                 </div>
                 <div>
