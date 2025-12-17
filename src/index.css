@@ -185,9 +185,10 @@
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(
       135deg, 
-      hsl(38 100% 65%) 0%, 
-      hsl(28 90% 55%) 50%,
-      hsl(45 100% 60%) 100%
+      hsl(258 93% 67%) 0%,      /* Light Violet #8B5FF9 */
+      hsl(255 78% 57%) 30%,     /* Primary Violet #6B3FE4 */
+      hsl(249 49% 48%) 60%,     /* Medium Blue #4A3FB8 */
+      hsl(249 51% 37%) 100%     /* Dark Blue #3B2F8F */
     );
   }
 
