@@ -107,10 +107,10 @@ export const HeroSection = () => {
           {/* Right: Orbital Animation */}
           <div className="relative h-[550px] hidden lg:flex items-center justify-center">
             {/* Outer glow ring */}
-            <div className="absolute w-[480px] h-[480px] rounded-full animate-rotate-slow opacity-30">
-              <div className="absolute inset-0 rounded-full border border-primary/20" 
+            <div className="absolute w-[480px] h-[480px] rounded-full animate-rotate-slow opacity-40">
+              <div className="absolute inset-0 rounded-full border border-primary/30" 
                 style={{ 
-                  background: `conic-gradient(from 0deg, transparent, hsl(var(--primary) / 0.1), transparent, hsl(var(--glow-gold) / 0.1), transparent)` 
+                  background: `conic-gradient(from 0deg, transparent, hsl(var(--primary) / 0.15), transparent, hsl(var(--accent) / 0.1), transparent)` 
                 }} 
               />
             </div>
@@ -118,9 +118,9 @@ export const HeroSection = () => {
             {/* Central core */}
             <div className="absolute w-36 h-36 rounded-full flex items-center justify-center">
               {/* Morphing background */}
-              <div className="absolute w-40 h-40 bg-gradient-to-br from-primary/20 to-glow-gold/10 animate-morph" />
+              <div className="absolute w-40 h-40 bg-gradient-to-br from-primary/25 to-accent/15 animate-morph" />
               {/* Glass container */}
-              <div className="relative w-28 h-28 rounded-full glass-card flex items-center justify-center glow-cyan">
+              <div className="relative w-28 h-28 rounded-full glass-card flex items-center justify-center glow-subtle">
                 <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center">
                   <Brain className="w-10 h-10 text-primary" />
                 </div>
@@ -133,19 +133,19 @@ export const HeroSection = () => {
             <svg className="absolute w-full h-full" viewBox="0 0 500 500">
               <defs>
                 <linearGradient id="orbitGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="hsl(195 100% 50% / 0.3)" />
-                  <stop offset="50%" stopColor="hsl(195 100% 50% / 0.05)" />
-                  <stop offset="100%" stopColor="hsl(195 100% 50% / 0.3)" />
+                  <stop offset="0%" stopColor="hsl(291 64% 50% / 0.35)" />
+                  <stop offset="50%" stopColor="hsl(291 64% 42% / 0.05)" />
+                  <stop offset="100%" stopColor="hsl(291 64% 50% / 0.35)" />
                 </linearGradient>
                 <linearGradient id="orbitGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="hsl(38 90% 55% / 0.2)" />
-                  <stop offset="50%" stopColor="hsl(38 90% 55% / 0.02)" />
-                  <stop offset="100%" stopColor="hsl(38 90% 55% / 0.2)" />
+                  <stop offset="0%" stopColor="hsl(285 65% 55% / 0.25)" />
+                  <stop offset="50%" stopColor="hsl(285 65% 45% / 0.02)" />
+                  <stop offset="100%" stopColor="hsl(285 65% 55% / 0.25)" />
                 </linearGradient>
               </defs>
               <circle cx="250" cy="250" r="120" fill="none" stroke="url(#orbitGradient1)" strokeWidth="1" />
               <circle cx="250" cy="250" r="180" fill="none" stroke="url(#orbitGradient2)" strokeWidth="1" />
-              <circle cx="250" cy="250" r="220" fill="none" stroke="hsl(195 100% 50% / 0.05)" strokeWidth="1" strokeDasharray="4 8" />
+              <circle cx="250" cy="250" r="220" fill="none" stroke="hsl(291 64% 42% / 0.08)" strokeWidth="1" strokeDasharray="4 8" />
             </svg>
 
             {/* Orbiting elements */}

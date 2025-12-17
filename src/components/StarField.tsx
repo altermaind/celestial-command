@@ -64,13 +64,13 @@ export const StarField = () => {
         const drawX = star.x + parallaxX;
         const drawY = star.y + parallaxY;
 
-        // Draw star with glow
+        // Draw star with glow - violet theme
         const gradient = ctx.createRadialGradient(
           drawX, drawY, 0,
           drawX, drawY, star.size * 3
         );
-        gradient.addColorStop(0, `hsla(195, 100%, 70%, ${currentOpacity})`);
-        gradient.addColorStop(0.5, `hsla(195, 100%, 60%, ${currentOpacity * 0.3})`);
+        gradient.addColorStop(0, `hsla(291, 64%, 65%, ${currentOpacity})`);
+        gradient.addColorStop(0.5, `hsla(285, 70%, 55%, ${currentOpacity * 0.3})`);
         gradient.addColorStop(1, "transparent");
 
         ctx.beginPath();

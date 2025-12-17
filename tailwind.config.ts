@@ -60,11 +60,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // ALTERMAIND custom colors
+        // ALTERMAIND custom colors - violet theme
         glow: {
+          primary: "hsl(var(--glow-primary))",
           cyan: "hsl(var(--glow-cyan))",
           blue: "hsl(var(--glow-blue))",
           gold: "hsl(var(--glow-gold))",
+          purple: "hsl(var(--glow-purple))",
         },
         space: {
           deep: "hsl(var(--space-deep))",
@@ -135,10 +137,11 @@ export default {
         "scale-in": "scale-in 0.5s ease-out forwards",
       },
       backgroundImage: {
-        "gradient-space": "linear-gradient(180deg, hsl(230 30% 3%) 0%, hsl(230 25% 8%) 50%, hsl(230 20% 12%) 100%)",
-        "gradient-glow": "linear-gradient(135deg, hsl(195 100% 50% / 0.2) 0%, hsl(220 100% 60% / 0.1) 100%)",
+        "gradient-space": "linear-gradient(180deg, hsl(0 0% 4%) 0%, hsl(0 0% 6%) 50%, hsl(0 0% 8%) 100%)",
+        "gradient-glow": "linear-gradient(135deg, hsl(291 64% 42% / 0.25) 0%, hsl(285 70% 50% / 0.1) 100%)",
         "gradient-gold": "linear-gradient(135deg, hsl(38 90% 55% / 0.2) 0%, hsl(38 90% 45% / 0.1) 100%)",
-        "gradient-radial": "radial-gradient(ellipse at 50% 0%, hsl(220 100% 60% / 0.08) 0%, transparent 50%)",
+        "gradient-radial": "radial-gradient(ellipse at 50% 0%, hsl(291 64% 42% / 0.12) 0%, transparent 50%)",
+        "gradient-violet": "linear-gradient(135deg, hsl(291 64% 42%) 0%, hsl(285 65% 50%) 100%)",
       },
     },
   },

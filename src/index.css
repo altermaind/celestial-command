@@ -8,58 +8,59 @@
 
 @layer base {
   :root {
-    /* Space-themed dark palette */
-    --background: 230 25% 5%;
-    --foreground: 210 40% 98%;
+    /* Corporate-tech dark palette - #0a0a0a base */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 100%;
 
-    --card: 230 20% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 230 20% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 100%;
 
-    /* Cyan/Blue glow - primary intelligence */
-    --primary: 195 100% 50%;
-    --primary-foreground: 230 25% 5%;
+    /* Violet primary - #9c27b0 */
+    --primary: 291 64% 42%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Deep space secondary */
-    --secondary: 230 20% 12%;
-    --secondary-foreground: 210 40% 98%;
+    /* Dark secondary */
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 230 15% 15%;
-    --muted-foreground: 215 20% 55%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
 
-    /* Gold accent for warmth */
-    --accent: 38 90% 55%;
-    --accent-foreground: 230 25% 5%;
+    /* Violet accent */
+    --accent: 285 65% 45%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 230 15% 18%;
-    --input: 230 15% 15%;
-    --ring: 195 100% 50%;
+    --border: 0 0% 16%;
+    --input: 0 0% 12%;
+    --ring: 291 64% 42%;
 
     --radius: 0.75rem;
 
-    /* Custom ALTERMAIND tokens */
-    --glow-cyan: 195 100% 60%;
-    --glow-blue: 220 100% 60%;
+    /* Custom ALTERMAIND tokens - violet theme */
+    --glow-primary: 291 64% 50%;
+    --glow-cyan: 291 80% 60%;
+    --glow-blue: 280 70% 55%;
     --glow-gold: 38 90% 55%;
-    --glow-purple: 270 100% 65%;
-    --space-deep: 230 30% 3%;
-    --space-mid: 230 25% 8%;
-    --glass: 230 20% 12%;
-    --glass-border: 230 15% 20%;
+    --glow-purple: 285 100% 65%;
+    --space-deep: 0 0% 4%;
+    --space-mid: 0 0% 7%;
+    --glass: 0 0% 10%;
+    --glass-border: 0 0% 18%;
 
-    --sidebar-background: 230 20% 8%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 195 100% 50%;
-    --sidebar-primary-foreground: 230 25% 5%;
-    --sidebar-accent: 230 15% 15%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 230 15% 18%;
-    --sidebar-ring: 195 100% 50%;
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 291 64% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 291 64% 42%;
   }
 }
 
@@ -120,12 +121,13 @@
       0 20px 40px -20px hsl(230 30% 3% / 0.5);
   }
 
-  /* Glow effects - enhanced */
-  .glow-cyan {
+  /* Glow effects - violet theme */
+  .glow-cyan,
+  .glow-violet {
     box-shadow: 
-      0 0 20px hsl(var(--glow-cyan) / 0.4),
-      0 0 40px hsl(var(--glow-cyan) / 0.2),
-      0 0 80px hsl(var(--glow-cyan) / 0.1);
+      0 0 20px hsl(var(--primary) / 0.4),
+      0 0 40px hsl(var(--primary) / 0.2),
+      0 0 80px hsl(var(--primary) / 0.1);
   }
 
   .glow-gold {
@@ -137,8 +139,8 @@
 
   .glow-subtle {
     box-shadow: 
-      0 0 40px hsl(var(--primary) / 0.15),
-      0 0 80px hsl(var(--primary) / 0.05);
+      0 0 40px hsl(var(--primary) / 0.2),
+      0 0 80px hsl(var(--primary) / 0.08);
   }
 
   .glow-border {
@@ -168,14 +170,14 @@
     pointer-events: none;
   }
 
-  /* Text gradients - enhanced */
+  /* Text gradients - violet theme */
   .text-gradient-cyan {
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(
       135deg, 
-      hsl(195 100% 65%) 0%, 
-      hsl(220 100% 75%) 50%,
-      hsl(195 100% 60%) 100%
+      hsl(291 80% 60%) 0%, 
+      hsl(280 70% 70%) 50%,
+      hsl(291 64% 55%) 100%
     );
   }
 
@@ -193,33 +195,33 @@
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(
       135deg, 
-      hsl(195 100% 60%) 0%, 
-      hsl(270 100% 70%) 50%,
-      hsl(38 90% 60%) 100%
+      hsl(291 64% 50%) 0%, 
+      hsl(320 80% 60%) 50%,
+      hsl(280 70% 65%) 100%
     );
   }
 
-  /* Space backgrounds */
+  /* Space backgrounds - corporate dark */
   .bg-space {
     background: 
-      radial-gradient(ellipse at 20% 0%, hsl(270 100% 60% / 0.05) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 100%, hsl(195 100% 50% / 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 20% 0%, hsl(291 64% 42% / 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 100%, hsl(280 70% 50% / 0.05) 0%, transparent 50%),
       linear-gradient(180deg, 
-        hsl(230 30% 3%) 0%, 
-        hsl(230 25% 6%) 30%,
-        hsl(230 20% 8%) 60%,
-        hsl(230 18% 10%) 100%
+        hsl(0 0% 4%) 0%, 
+        hsl(0 0% 5%) 30%,
+        hsl(0 0% 6%) 60%,
+        hsl(0 0% 7%) 100%
       );
   }
 
   .bg-space-radial {
     background: 
-      radial-gradient(ellipse at 50% 0%, hsl(195 100% 50% / 0.08) 0%, transparent 40%),
-      radial-gradient(ellipse at 100% 50%, hsl(270 100% 60% / 0.05) 0%, transparent 50%),
-      radial-gradient(ellipse at 0% 100%, hsl(38 90% 55% / 0.03) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 0%, hsl(291 64% 42% / 0.12) 0%, transparent 40%),
+      radial-gradient(ellipse at 100% 50%, hsl(285 80% 50% / 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 0% 100%, hsl(291 64% 42% / 0.04) 0%, transparent 50%),
       linear-gradient(180deg, 
-        hsl(230 30% 3%) 0%, 
-        hsl(230 25% 8%) 100%
+        hsl(0 0% 4%) 0%, 
+        hsl(0 0% 7%) 100%
       );
   }
 
@@ -411,14 +413,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(230 20% 8%);
+  background: hsl(0 0% 7%);
 }
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(
     180deg,
-    hsl(var(--primary) / 0.3) 0%,
-    hsl(var(--primary) / 0.1) 100%
+    hsl(var(--primary) / 0.4) 0%,
+    hsl(var(--primary) / 0.2) 100%
   );
   border-radius: 3px;
 }
@@ -426,8 +428,8 @@
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(
     180deg,
-    hsl(var(--primary) / 0.5) 0%,
-    hsl(var(--primary) / 0.2) 100%
+    hsl(var(--primary) / 0.6) 0%,
+    hsl(var(--primary) / 0.3) 100%
   );
 }
 
