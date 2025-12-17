@@ -71,9 +71,7 @@ export const Footer = () => {
           {/* Brand column */}
           <div className="lg:col-span-2 space-y-6">
             <a href="#" className="flex items-center gap-3 group">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center border border-primary/20 p-2">
-                <img src={logoAltermaind} alt="Altermaind" className="w-full h-full object-contain" />
-              </div>
+              <img src={logoAltermaind} alt="Altermaind" className="w-16 h-16 object-contain" />
               <div>
                 <span className="text-xl font-semibold text-foreground tracking-tight block">
                   ALTER<span className="text-gradient-cyan">MAIND</span>
