@@ -40,18 +40,6 @@ export const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Content */}
           <div className="space-y-8">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass-card animate-fade-in group cursor-default">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
-              </span>
-              <span className="text-sm font-medium text-foreground/80">
-                Enterprise AI Ecosystem
-              </span>
-              <Sparkles className="w-4 h-4 text-accent" />
-            </div>
-            
             {/* Headline */}
             <div className="space-y-2">
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight">
