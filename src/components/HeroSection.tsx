@@ -45,7 +45,7 @@ export const HeroSection = () => {
             <div className="space-y-2">
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95]">
                 <span className="block text-foreground animate-fade-in-up font-sans tracking-[0.01em]">ALTERMAIND</span>
-                <span className="block text-gradient-cyan animate-fade-in-up delay-100 tracking-[0.01em]">Shaping the</span>
+                <span className="block text-gradient-cyan animate-fade-in-up delay-100 tracking-[0.01em] pb-2">Shaping the</span>
                 <span className="block text-gradient-gold animate-fade-in-up delay-200 tracking-[0.01em]">Unseen.</span>
               </h1>
             </div>
