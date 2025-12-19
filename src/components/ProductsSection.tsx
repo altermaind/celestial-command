@@ -2,6 +2,7 @@ import { useState } from "react";
 import productIcon from "@/assets/product_icon.png";
 import gravityDashboard from "@/assets/gravity_dashboard.png";
 import nebulaDashboard from "@/assets/nebula_dashboard.png";
+import slashDashboard from "@/assets/slash_dashboard.png";
 import { 
   Shield, Sparkles, Cloud, Gauge, FileText,
   ChevronRight, Check, ArrowRight
@@ -13,7 +14,8 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 const dashboardImages: Record<string, string> = {
   gravity: gravityDashboard,
   nebula: nebulaDashboard,
-  // Aurora, Slash, Beyond verranno aggiunti quando carichi le immagini
+  slash: slashDashboard,
+  // Aurora, Beyond verranno aggiunti quando carichi le immagini
 };
 
 const products = [
