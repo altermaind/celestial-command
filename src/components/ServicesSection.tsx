@@ -63,7 +63,7 @@ export const ServicesSection = () => {
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
             The Transformation
-            <span className="text-gradient-gold block mt-2">Engine</span>
+            <span className="text-gradient-gold block mt-2 pb-2">Engine</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
             Cinque fasi di una missione AI. Dalla strategia all'operatività, 
