@@ -3,6 +3,7 @@ import productIcon from "@/assets/product_icon.png";
 import gravityDashboard from "@/assets/gravity_dashboard.png";
 import nebulaDashboard from "@/assets/nebula_dashboard.png";
 import slashDashboard from "@/assets/slash_dashboard.png";
+import auroraDashboard from "@/assets/aurora_dashboard.png";
 import { 
   Shield, Sparkles, Cloud, Gauge, FileText,
   ChevronRight, Check, ArrowRight
@@ -15,7 +16,8 @@ const dashboardImages: Record<string, string> = {
   gravity: gravityDashboard,
   nebula: nebulaDashboard,
   slash: slashDashboard,
-  // Aurora, Beyond verranno aggiunti quando carichi le immagini
+  aurora: auroraDashboard,
+  // Beyond verrà aggiunto quando carichi l'immagine
 };
 
 const products = [
