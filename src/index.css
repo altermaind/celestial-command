@@ -4,7 +4,14 @@
 
 /* ALTERMAIND Design System - Space, Enterprise, AI-Native */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+/* Coolvetica Font */
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('/fonts/Coolvetica_Rg.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 @layer base {
   :root {
@@ -75,7 +82,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Coolvetica', system-ui, sans-serif;
     overflow-x: hidden;
   }
 
