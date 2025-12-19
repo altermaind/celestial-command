@@ -23,7 +23,7 @@ const dashboardImages: Record<string, string> = {
 const products = [
   {
     id: "gravity",
-    name: "Gravity",
+    name: "gravity",
     tagline: "AI Governance Platform",
     icon: Shield,
     gradient: "from-primary via-glow-blue to-primary",
@@ -43,7 +43,7 @@ const products = [
   },
   {
     id: "aurora",
-    name: "Aurora",
+    name: "aurora",
     tagline: "Agentic Platform",
     icon: Sparkles,
     gradient: "from-accent via-glow-gold to-accent",
@@ -63,7 +63,7 @@ const products = [
   },
   {
     id: "nebula",
-    name: "Nebula",
+    name: "nebula",
     tagline: "Cloud & DORA",
     icon: Cloud,
     gradient: "from-glow-blue via-primary to-glow-blue",
@@ -83,7 +83,7 @@ const products = [
   },
   {
     id: "slash",
-    name: "Slash",
+    name: "slash",
     tagline: "AI Readiness",
     icon: Gauge,
     gradient: "from-glow-purple via-primary to-glow-purple",
@@ -103,7 +103,7 @@ const products = [
   },
   {
     id: "beyond",
-    name: "Beyond",
+    name: "beyond",
     tagline: "Document Intelligence",
     icon: FileText,
     gradient: "from-accent via-glow-gold to-accent",
