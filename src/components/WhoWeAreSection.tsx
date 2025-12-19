@@ -61,7 +61,7 @@ export const WhoWeAreSection = () => {
             <ScrollReveal key={pillar.title} delay={index * 100}>
               <div className="group relative h-full">
                 {/* Card */}
-                <div className="relative p-8 rounded-3xl glass-card h-full transition-all duration-500 group-hover:translate-y-[-4px]">
+                <div className="relative p-8 rounded-3xl glass-card h-full transition-all duration-500 group-hover:translate-y-[-4px] group-hover:border-primary/40 group-hover:shadow-[0_0_30px_hsl(var(--primary)/0.15)]">
                   {/* Gradient background on hover */}
                   <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${pillar.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                   
