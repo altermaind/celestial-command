@@ -6,7 +6,7 @@ const pillars = [
     icon: Target,
     title: "Mission",
     description: "Abilitare le imprese a operare AI su scala con governance, controllo e fiducia.",
-    gradient: "from-primary/20 to-primary/5",
+    gradient: "from-glow-purple/20 to-glow-purple/5",
   },
   {
     icon: Layers,
