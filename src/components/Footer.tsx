@@ -31,7 +31,12 @@ const footerLinks = {
   ],
 };
 
-const partners = ["Microsoft", "MongoDB", "Prometeia", "EVOS"];
+const partners = [
+  { name: "Microsoft", href: "https://www.microsoft.com/it-it" },
+  { name: "MongoDB", href: "https://www.mongodb.com/" },
+  { name: "Prometeia", href: "https://www.prometeia.com/it" },
+  { name: "EVOS", href: "#" },
+];
 
 export const Footer = () => {
   return (
@@ -171,12 +176,15 @@ export const Footer = () => {
           <span className="text-sm text-muted-foreground">Ecosystem Partners</span>
           <div className="flex flex-wrap items-center justify-center gap-8">
             {partners.map((partner) => (
-              <span 
-                key={partner} 
+              <a 
+                key={partner.name}
+                href={partner.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-lg font-semibold text-muted-foreground/40 hover:text-foreground transition-colors cursor-pointer"
               >
-                {partner}
-              </span>
+                {partner.name}
+              </a>
             ))}
           </div>
         </div>
