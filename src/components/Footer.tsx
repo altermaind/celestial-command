@@ -97,7 +97,7 @@ export const Footer = () => {
 
             {/* Social links */}
             <div className="flex gap-3 pt-4">
-              <a href="#" className="w-10 h-10 rounded-xl bg-secondary/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all">
+              <a href="https://linkedin.com/company/altermaind/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-secondary/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all">
                 <Linkedin className="w-5 h-5" />
               </a>
               <a href="#" className="w-10 h-10 rounded-xl bg-secondary/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all">
