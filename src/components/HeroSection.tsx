@@ -75,7 +75,7 @@ export const HeroSection = () => {
             {/* Trust indicators */}
             <div className="flex items-center gap-6 md:gap-10 pt-8 animate-fade-in-up delay-500">
               {[
-                { value: "100+", label: "Enterprise Clients" },
+                { value: "Worldwide", label: "Enterprise Clients" },
                 { value: "AI Act", label: "Compliant" },
                 { value: "EU", label: "Based & Trusted" },
               ].map((stat, index) => (
