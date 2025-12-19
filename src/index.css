@@ -13,6 +13,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Coolvetica Condensed';
+  src: url('/fonts/Coolvetica_Rg_Cond.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     /* Corporate-tech dark palette - #0a0a0a base */

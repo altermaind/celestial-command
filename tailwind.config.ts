@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Coolvetica', 'system-ui', 'sans-serif'],
+        condensed: ['Coolvetica Condensed', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
