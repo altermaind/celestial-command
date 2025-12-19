@@ -1,5 +1,6 @@
 import { useState } from "react";
 import productIcon from "@/assets/product_icon.png";
+import gravityDashboard from "@/assets/gravity_dashboard.png";
 import { 
   Shield, Sparkles, Cloud, Gauge, FileText,
   ChevronRight, Check, ArrowRight
@@ -219,77 +220,16 @@ export const ProductsSection = () => {
             </Button>
           </ScrollReveal>
 
-          {/* Right: Dashboard mockup */}
+          {/* Right: Dashboard image */}
           <ScrollReveal delay={200}>
             <div className="relative">
-              {/* Main dashboard */}
-              <div className="glass-card rounded-3xl p-8 glow-border">
-                {/* Header */}
-                <div className="flex items-center justify-between mb-8">
-                  <div className="flex items-center gap-3">
-                    <div className="relative">
-                      <div className="w-3 h-3 rounded-full bg-primary" />
-                      <div className="absolute inset-0 w-3 h-3 rounded-full bg-primary animate-ping" />
-                    </div>
-                    <span className="font-semibold text-foreground">{activeProduct.name} Dashboard</span>
-                  </div>
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                    <span className="text-xs font-medium text-primary">Live</span>
-                  </div>
-                </div>
-
-                {/* Metrics */}
-                <div className="grid grid-cols-3 gap-6 mb-8">
-                  {activeProduct.metrics.map((metric, index) => (
-                    <div 
-                      key={metric.label} 
-                      className="text-center p-4 rounded-2xl bg-secondary/30 animate-fade-in"
-                      style={{ animationDelay: `${index * 100}ms` }}
-                    >
-                      <div className="text-3xl md:text-4xl font-bold text-foreground mb-1">
-                        {metric.value}
-                      </div>
-                      <div className="text-xs text-muted-foreground mb-2">{metric.label}</div>
-                      <div className="text-xs font-medium text-primary">{metric.trend}</div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Chart visualization */}
-                <div className="h-40 rounded-2xl bg-gradient-to-br from-secondary/50 to-secondary/20 relative overflow-hidden">
-                  {/* Animated chart lines */}
-                  <svg className="w-full h-full" viewBox="0 0 400 100" preserveAspectRatio="none">
-                    <defs>
-                      <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.3" />
-                        <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      d="M0,80 Q50,60 100,70 T200,50 T300,65 T400,35"
-                      fill="none"
-                      stroke="hsl(var(--primary))"
-                      strokeWidth="2"
-                      className="animate-fade-in"
-                    />
-                    <path
-                      d="M0,80 Q50,60 100,70 T200,50 T300,65 T400,35 L400,100 L0,100 Z"
-                      fill="url(#chartGradient)"
-                      className="animate-fade-in"
-                    />
-                  </svg>
-                  
-                  {/* Grid overlay */}
-                  <div 
-                    className="absolute inset-0 opacity-10"
-                    style={{
-                      backgroundImage: `linear-gradient(hsl(var(--primary)) 1px, transparent 1px),
-                                       linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)`,
-                      backgroundSize: '40px 20px'
-                    }}
-                  />
-                </div>
+              {/* Dashboard image */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl glow-border">
+                <img 
+                  src={gravityDashboard} 
+                  alt={`${activeProduct.name} Dashboard`}
+                  className="w-full h-auto object-contain"
+                />
               </div>
 
               {/* Floating accent elements */}
