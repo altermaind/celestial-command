@@ -1,12 +1,20 @@
 import { useState } from "react";
 import productIcon from "@/assets/product_icon.png";
 import gravityDashboard from "@/assets/gravity_dashboard.png";
+import nebulaDashboard from "@/assets/nebula_dashboard.png";
 import { 
   Shield, Sparkles, Cloud, Gauge, FileText,
   ChevronRight, Check, ArrowRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ScrollReveal";
+
+// Mappa delle dashboard per ogni prodotto
+const dashboardImages: Record<string, string> = {
+  gravity: gravityDashboard,
+  nebula: nebulaDashboard,
+  // Aurora, Slash, Beyond verranno aggiunti quando carichi le immagini
+};
 
 const products = [
   {
@@ -225,11 +233,17 @@ export const ProductsSection = () => {
             <div className="relative">
               {/* Dashboard image */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl glow-border">
-                <img 
-                  src={gravityDashboard} 
-                  alt={`${activeProduct.name} Dashboard`}
-                  className="w-full h-auto object-contain"
-                />
+                {dashboardImages[activeProduct.id] ? (
+                  <img 
+                    src={dashboardImages[activeProduct.id]} 
+                    alt={`${activeProduct.name} Dashboard`}
+                    className="w-full h-auto object-contain"
+                  />
+                ) : (
+                  <div className="aspect-video bg-secondary/50 flex items-center justify-center">
+                    <p className="text-muted-foreground">Dashboard coming soon</p>
+                  </div>
+                )}
               </div>
 
               {/* Floating accent elements */}
