@@ -91,6 +91,7 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Coolvetica', system-ui, sans-serif;
+    letter-spacing: 0.013em;
     overflow-x: hidden;
   }
 
