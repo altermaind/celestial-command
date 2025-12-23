@@ -1,0 +1,57 @@
+trigger: none
+
+parameters:
+  # ======= WorkFlow Parameters ======
+
+  - name: forRelease
+    displayName: For Release
+    type: boolean
+    default: false
+
+  - name: qualityOnly
+    displayName: Quality Only
+    type: boolean
+    default: false
+
+# ===================================================
+# ==================== Variables ====================
+variables:
+  - group: "AKS - Altermaind - FrontEnd - Endpoints"
+  - group: "Common Build Configurations"
+  - group: "Common build-time ACR Configuration - Public Site - AM"
+
+# ===================================================
+# ==================== Resources ====================
+# ===================================================
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: SDLC/PipelineTemplates
+      ref: master
+
+# ===================================================
+# ======================= Main ======================
+# ===================================================
+
+extends:
+  template: v2/processes/generic-process.yaml@templates
+  parameters:
+    ${{ each parameter in parameters }}:
+      ${{ parameter.Key }}: ${{ parameter.Value }}
+
+    codeScanCustomProperties:
+      asyncSecurityScan: true
+
+    flavour:
+      build: /v2/build/nodejs-aks.yaml
+      release: /v2/release/aks-release.yaml
+      releaseDr: false
+
+    buildParameters:
+      - name: filePath
+        value: package.json
+      - name: manifestPath
+        value: aks/kubernetes_deploy.yml
+      - name: nodeVersion
+        value: 20.x

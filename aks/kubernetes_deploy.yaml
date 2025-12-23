@@ -1,0 +1,88 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: altermaind-ai
+  namespace: alter-fe
+  labels:
+    app: altermaind-ai
+    service: altermaind-ai
+spec:
+  selector:
+    app: altermaind-ai
+  ports:
+    - name: http-altermaind-ai
+      port: 3000
+      targetPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: altermaind-ai
+  namespace: alter-fe
+  annotations:
+    sidecar.istio.io/rewriteAppHTTPProbers: "true"
+  labels:
+    app: alteraltermaind-aimaind
+    version: v1
+spec:
+  replicas: 2
+  minReadySeconds: 3
+  revisionHistoryLimit: 5
+  selector:
+    matchLabels:
+      app: altermaind-ai
+      version: v1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/rewriteAppHTTPProbers: "true"
+        ad.datadoghq.com/tags: '{"lineofbusiness": "ai","application": "altermaind-ai", "service": "altermaind", "version":"v1"}'
+        ad.datadoghq.com/altermaind-ai.logs: '[{"source":"altermaind-ai","service":"altermaind-ai"}]'
+        # ad.datadoghq.com/istio-proxy.logs: '[{"source":"onboarding-self-istio-proxy","service":"onboarding-self"}]'
+      labels:
+        app: altermaind
+        version: v1
+        release: "#{RELEASE_NUM}#"
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - altermaind
+                topologyKey: "failure-domain.beta.kubernetes.io/zone"
+            - weight: 80
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - altermaind
+                topologyKey: "kubernetes.io/hostname"
+      containers:
+        - name: altermaind
+          image: #{ACR}#/#{CONTAINER_REPOSITORY}#:#{IMAGE_VERSION}#
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: 200m
+              memory: 80Mi
+            limits:
+              cpu: 600m
+              memory: 1200Mi
+          envFrom:
+            - configMapRef:
+                name: configmap-altermaind-ai
+          ports:
+            - containerPort: 3000

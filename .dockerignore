@@ -1,0 +1,15 @@
+node_modules
+dist
+.git
+.gitignore
+venv
+*.log
+*.md
+/.husky
+/.cache
+/.idea
+/.vscode
+coverage
+npm-debug.log*
+Dockerfile
+ci-cd/*.yaml
