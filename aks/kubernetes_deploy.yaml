@@ -49,27 +49,6 @@ spec:
         version: v1
         release: "#{RELEASE_NUM}#"
     spec:
-      affinity:
-        podAntiAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-            - weight: 100
-              podAffinityTerm:
-                labelSelector:
-                  matchExpressions:
-                    - key: app
-                      operator: In
-                      values:
-                        - altermaind
-                topologyKey: "failure-domain.beta.kubernetes.io/zone"
-            - weight: 80
-              podAffinityTerm:
-                labelSelector:
-                  matchExpressions:
-                    - key: app
-                      operator: In
-                      values:
-                        - altermaind
-                topologyKey: "kubernetes.io/hostname"
       containers:
         - name: altermaind
           image: #{ACR}#/#{CONTAINER_REPOSITORY}#:#{IMAGE_VERSION}#
