@@ -52,6 +52,6 @@ extends:
       - name: filePath
         value: package.json
       - name: manifestPath
-        value: aks/kubernetes_deploy.yml
+        value: aks/kubernetes_deploy.yaml
       - name: nodeVersion
         value: 20.x
