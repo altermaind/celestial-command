@@ -1,3 +1,19 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: altermaind-ai
+  namespace: alter-fe
+  labels:
+    app: altermaind-ai
+    service: altermaind-ai
+spec:
+  selector:
+    app: altermaind-ai
+  ports:
+    - name: http-altermaind-ai
+      port: 3000
+      targetPort: 80
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -27,6 +43,7 @@ spec:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
         ad.datadoghq.com/tags: '{"lineofbusiness": "ai","application": "altermaind-ai", "service": "altermaind", "version":"v1"}'
         ad.datadoghq.com/altermaind-ai.logs: '[{"source":"altermaind-ai","service":"altermaind-ai"}]'
+        # ad.datadoghq.com/istio-proxy.logs: '[{"source":"onboarding-self-istio-proxy","service":"onboarding-self"}]'
       labels:
         app: altermaind-ai
         version: v1
